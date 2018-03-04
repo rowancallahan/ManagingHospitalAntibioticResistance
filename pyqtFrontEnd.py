@@ -9,6 +9,8 @@ from PyQt4.QtGui import QWidget, QFileDialog
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
+from matplotlib.widgets import Cursor
+import matplotlib.colors as mcolors
 
 import random
 
@@ -101,6 +103,7 @@ class Window(QtGui.QDialog):
         # string_list = QtCore.QStringList(self.s_list)
         d_list, s_list, e_list, ab4heat = get_edges(self.file)
         self.combobox.clear()
+        self.figure.clear()
         self.combobox.addItems(s_list)
 
         # create an axis
@@ -114,8 +117,16 @@ class Window(QtGui.QDialog):
         ax.set_xticklabels(s_list, minor=False, rotation='vertical')
         ax.set_yticklabels(d_list, minor=False)
 
+
+
         # plot data
-        ax.imshow(ab4heat)
+        #pos_colors = plt.cm.binary([0.1,2,4,8,16,32])
+        #neg_colors = plt.cm.binary([-8,-4,-2,0])
+        #all_colors = np.vstack((neg_colors,pos_colors))
+        #map = mcolors.LinearSegmentedColorMap.from_list('my_colormap',all_colors)
+        cax = ax.imshow(ab4heat,cmap='RdBu_r',vmax=16.1,vmin=-16.1)
+        self.figure.colorbar(cax,ticks=[-8,-4,-2,0,2,4,8,16,32]) #boundaries=[-8,-4,-2,0,2,4,8,16,32]
+        ax.set_title(self.file)
 
 
         # refresh canvas
