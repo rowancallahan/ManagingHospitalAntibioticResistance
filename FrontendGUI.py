@@ -16,6 +16,7 @@ from bokeh.layouts import row, widgetbox
 from bokeh.models import ColumnDataSource
 from bokeh.models.widgets import Slider, TextInput
 from bokeh.plotting import figure
+from bokeh.models.widgets import CheckboxGroup
 
 # Set up data
 
@@ -56,6 +57,9 @@ plot = figure(plot_height=400, plot_width=400, title="Antibiotici Resistance Pre
 
 plot.line('x', 'y', source=source, line_width=3, line_alpha=0.6)
 
+checkbox_group = CheckboxGroup(
+    labels=["Option 1", "Option 2", "Option 3"], active=[0, 1])
+
 
 # Set up widgets
 text = TextInput(title="title", value='Antibiotic in Use')
@@ -65,6 +69,8 @@ c = Slider(title="c", value=0.01, start=0.0, end=0.05, step=0.001)
 d = Slider(title="d", value=0.01, start=0.0, end=0.05, step=0.001)
 e = Slider(title="e", value=0.01, start=0.0, end=0.05, step=0.001)
 f = Slider(title="f", value=0.01, start=0.0, end=0.05, step=0.001)
+checkbox_group = CheckboxGroup(
+    labels=["Option 1", "Option 2", "Option 3"], active=[0, 1])
 
 # Set up callbacks
 def update_title(attrname, old, new):
@@ -99,7 +105,7 @@ for w in [a, b, c, d,e,f]:
 
 
 # Set up layouts and add to document
-inputs = widgetbox(text, a, b, c, d,e,f)
+inputs = widgetbox(text, a, b, c, d,e,f, checkbox_group)
 
 curdoc().add_root(row(inputs, plot, width=800))
 curdoc().title = "Sliders"
