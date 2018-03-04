@@ -114,9 +114,10 @@ class Window(QtGui.QDialog):
 
         ax.set_xticks(range(len(s_list)), minor=False)
         ax.set_yticks(range(len(d_list)), minor= False)
-        ax.set_xticklabels(s_list, minor=False, rotation='vertical')
-        ax.set_yticklabels(d_list, minor=False)
-
+        ax.set_xticklabels(d_list, minor=False, rotation='vertical')
+        ax.set_yticklabels(s_list, minor=False)
+        ax.set_xlabel("Drug")
+        ax.set_ylabel("Strain Resistance")
 
 
         # plot data
