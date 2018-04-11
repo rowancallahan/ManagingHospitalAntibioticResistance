@@ -1,0 +1,23 @@
+Amikacin	AMI	Aminoglycoside	Protein synthesis, 30S
+Gentamicin	GEN	Aminoglycoside	Protein synthesis, 30S
+Kanamycin	KAN	Aminoglycoside	Protein synthesis, 30S
+Streptomycin	STR	Aminoglycoside	Protein synthesis, 30S
+Ampicillin	AMP	Beta-Lactam	Cell Wall
+Amoxicillin	AMX	Beta-Lactam	Cell Wall
+Piperacillin	PIP	Beta-Lactam	Cell Wall
+Cefuroxime	CFX	Beta-Lactam	Cell Wall
+Cefepime	CFP	Beta-Lactam	Cell Wall
+Nalidixic acid	NAL	Quinolone	DNA gyrase
+Ciprofloxacin	CIP	Quinolone	DNA gyrase
+Levofloxacin	CIP	Quinolone	DNA gyrase
+Tetracycline	TET	Tetracycline	Protein synthesis, 30S
+Minocycline	MIN	Tetracycline	Protein synthesis, 30S
+Tigecycline	TGC	Tetracycline	Protein synthesis, 30S
+Chloramphenicol	CHL	Amphenicol	Protein synthesis, 50S
+Azithromycin	AZY	Macrolide	Protein synthesis, 50S
+Colistin	COL	Polymyxin	Lipopolysaccharide
+Polymyxin B	POL	Polymyxin	Lipopolysaccharide
+Fosfomycin	FOS	Fosfomycin	Cell wall biogenesis
+Rifampicin	RIF	Rifamycin	RNA polymerase
+Nitrofurantoin	NIT	Nitrofuran	Multiple
+Trimethoprim	TRI	Dihydrofolate reductase inhibitor	Folic acid biosynthesis
